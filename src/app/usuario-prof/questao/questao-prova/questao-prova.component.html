@@ -1,0 +1,69 @@
+<div class="col-md-12">
+    <div class="col-md-5">
+        <h6>Selecione a questao, que ela passara automaticamente!</h6>
+        <table class="table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>
+                    Categoria
+                </th>
+                <th>
+                    Nivel
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let questoesAll of questoesAlls">
+                <td>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="optionsCheckboxes" value="{{questoesAll.id}}">
+                        </label>
+                    </div>
+                </td>
+                <td>{{questoesAll.disciplina_id.area_de_conhecimento}}</td>
+                <td>{{questoesAll.nivel}}</td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-2">
+        <br>
+        <br>
+        <button (click)="addQuestao()" class="btn btn-default">
+            <i class="material-icons">trending_flat</i>
+        </button>
+    </div>
+    <div class="col-md-5">
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>
+                    Categoria
+                </th>
+                <th>
+                    Nivel
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let questoesProva of questoesProvas">
+                <td>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="optionsCheckboxes" value="{{questoesProva.id}}">
+                        </label>
+                    </div>
+                </td>
+                <td>{{questoesProva.disciplina_id.area_de_conhecimento}}</td>
+                <td>{{questoesProva.nivel}}</td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

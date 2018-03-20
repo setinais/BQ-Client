@@ -1,0 +1,38 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Categoria
+            </th>
+            <th>
+                Enunciado
+            </th>
+            <th>
+                Nivel
+            </th>
+            <th>Created at</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let questao of questoes">
+        <td>{{questao.disciplina_id.area_de_conhecimento}}</td>
+        <td>{{questao.enunciado}}</td>
+        <td>{{questao.nivel}}</td>
+        <td>{{questao.created_at}}</td>
+
+        <td class="td-actions text-right">
+
+            <button (click)="emitEdit(questao)" type="button" rel="tooltip" title="Edit Task"
+                    class="btn btn-primary btn-simple btn-xs">
+                <i class="material-icons">edit</i>
+            </button>
+            <button (click)="emitDelete(questao)" type="button" rel="tooltip" title="Remove"
+                    class="btn btn-danger btn-simple btn-xs">
+                <i class="material-icons">close</i>
+            </button>
+        </td>
+
+    </tr>
+    </tbody>
+</table>

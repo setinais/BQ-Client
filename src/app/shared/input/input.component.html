@@ -1,0 +1,11 @@
+
+<div class="form-group form-black label-floating is-empty" [class.has-success]="hasSuccess()"
+     [class.has-error]="hasError()">
+    <label class="control-label">{{label}}</label>
+
+    <ng-content></ng-content>
+    <span class="form-control-feedback" *ngIf="showTip && hasSuccess()"><i
+            class="material-icons">done</i> </span>
+    <span class="material-icons form-control-feedback" *ngIf="showTip && hasError()">clear</span>
+</div>
+

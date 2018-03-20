@@ -1,0 +1,95 @@
+<div class="col-md-10 col-md-offset-1">
+    <div class="card card-nav-tabs">
+        <div class="card-header" data-background-color="red">
+            <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                    <span class="nav-tabs-title">Opções</span>
+                    <ul class="nav nav-tabs" data-tabs="tabs">
+                        <li class="active">
+                            <a href="#usuario" data-toggle="tab">
+                                <i class="material-icons">bug_report</i>
+                                Usuario
+                                <div class="ripple-container"></div></a>
+                        </li>
+                        <li class="">
+                            <a (click)="toToggleProfessor()" href="#" data-toggle="tab">
+                                <i class="material-icons">code</i>
+                                Professor
+                                <div class="ripple-container"></div></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-content">
+            <h3>Cadastro</h3>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="usuario">
+                    <form [formGroup]="userForm" novalidate>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <app-input-container errorMessage="Campo Obrigatorio" label="Primeiro Nome">
+                                        <input type="text" class="form-control" formControlName="name" autocomplete="off">
+                                    </app-input-container>
+                                </div>
+                                <div class="col-md-4 col-md-offset-2">
+                                    <app-input-container errorMessage="Campo Obrigatorio" label="E-mail">
+                                        <input class="form-control" formControlName="email" autocomplete="off">
+                                    </app-input-container>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <app-input-container errorMessage="Campo Obrigatorio" label="Senha">
+                                        <input type="password" class="form-control" formControlName="password" autocomplete="off">
+                                    </app-input-container>
+                                </div>
+                                <div class="col-md-4">
+                                    <app-input-container errorMessage="Campo Obrigatorio" label="Confirme a Senha">
+                                        <input type="password" class="form-control" formControlName="password_confirmation" autocomplete="off">
+                                    </app-input-container>
+                                </div>
+                                <div class="col-md-3 col-md-offset-1">
+                                    <app-input-container errorMessage="Campo Obrigatorio" label="Telefone">
+                                        <input class="form-control" formControlName="telefone" autocomplete="off">
+                                    </app-input-container>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <h4>Sexo: </h4>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" formControlName="sexo" value="Masculino"/>
+                                        Masculino
+                                    </label>
+                                    <label>
+                                        <input type="radio" formControlName="sexo" value="Feminino"/>
+                                        Feminino
+                                    </label>
+                                </div>
+                            </div>
+                        <div class="tab-pane" *ngIf="professor">
+                            <div [formGroup]="profForm">
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button (click)="addUsuario(userForm.value,profForm.value)" class="btn btn-success btn-lg pull-right"
+                            >Salvar
+                            </button>
+                            <button routerLink="/" class="btn btn-info btn-lg pull-right"
+                            >Home
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
