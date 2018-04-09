@@ -17,7 +17,6 @@ export class AplicationErrorHandler extends ErrorHandler{
         if(errorResponse instanceof HttpErrorResponse) {
             const message = errorResponse.message
             const messageServer = errorResponse.error.message
-            console.log(errorResponse)
             this.zone.run(()=>{
                 switch (errorResponse.status) {
                     case 400:
@@ -25,7 +24,7 @@ export class AplicationErrorHandler extends ErrorHandler{
 
                         break;
                     case 401:
-                        this.ns.showNotification('error 401 redirecionar ', 'danger')
+                        this.ns.showNotification('Error 401 redirecionar ', 'danger')
                         break;
                     case 403:
                         this.ns.showNotification('Não autorizado', 'danger')
@@ -41,6 +40,9 @@ export class AplicationErrorHandler extends ErrorHandler{
                         break;
                     case 0:
                         this.ns.showNotification('Falha de conexão', 'danger')
+                        break;
+                    case 422:
+                        this.ns.showNotification('Alguns campos estão errados!', 'alert')
                         break;
 
                 }

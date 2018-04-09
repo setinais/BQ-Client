@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Questao} from './questao.model';
+import {Questao} from '../../models/questao.model';
 import {QuestaoService} from '../../services/questao.service';
 import {NotificacaoService} from '../../services/notificacao.service';
 import {UsuarioService} from '../../services/usuario.service';
+import {LoginService} from '../../services/login.service';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class QuestaoComponent implements OnInit {
         this.questaoService.getQuestao(2).subscribe(
             response => {
                 this.questoes = response['data'];
-                console.log(response);
+
             }
         );
 
@@ -36,6 +37,7 @@ export class QuestaoComponent implements OnInit {
     getAllQuestao() {
         this.questaoService.getQuestaoAll().subscribe(response => {
             this.questoesAlls = response['data'];
+            console.log(response);
         })
     }
     delete(questao: Questao) {

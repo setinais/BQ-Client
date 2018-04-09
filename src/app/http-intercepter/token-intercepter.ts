@@ -10,12 +10,12 @@ export class TokenInterceptor implements HttpInterceptor {
 
     intercept(req: HttpRequest<any>, next: HttpHandler) {
         const loginService = this.injector.get(LoginService);
+        const tokenacess = JSON.parse(localStorage.getItem('token'))
         if (loginService.isLoggedIn()) {
-
             const httpOptions = {
                 headers: new HttpHeaders({
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${loginService.token.access_token}`
+                    'Authorization': `Bearer ${tokenacess.access_token}`
                 })
             };
 

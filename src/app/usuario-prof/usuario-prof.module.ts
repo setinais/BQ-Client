@@ -6,22 +6,26 @@ import {RouterModule, Routes} from '@angular/router';
 import {QuestaoModule} from './questao/questao.module';
 import {UsuarioProfComponent} from './usuario-prof.component';
 import {QuestaoComponent} from './questao/questao.component';
+import {LoggedInGuard} from '../login/log.guard';
+import {UserProfileModule} from './user-profile/user-profile.module';
 
 const ROUTES: Routes = [
     { path: 'usuario', component: UsuarioProfComponent, children: [
-            { path: '',      component: DashboardComponent },
+            {path: '', redirectTo: '/usuario/dash' , pathMatch: 'full'},
+            { path: 'dash',      component: DashboardComponent },
             { path: 'questao', component: QuestaoComponent},
             { path: 'user-profile',   component: UserProfileComponent },
-        ]},
+
+        ], canActivate: [LoggedInGuard]},
 ];
 
 @NgModule({
     declarations: [
-        UserProfileComponent,
         DashboardComponent,
         UsuarioProfComponent],
-    imports: [ ComponentsModule, QuestaoModule, RouterModule.forChild(ROUTES)],
-    exports: []
+    imports: [ComponentsModule, QuestaoModule, RouterModule.forChild(ROUTES), UserProfileModule],
+    exports: [],
+    providers: [LoggedInGuard]
 })
 
 export class UsuarioProfModule{

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {Questao} from '../questao.model';
-import {AreaConhecimento} from '../area-conhecimento.model';
+import {Questao} from '../../../models/questao.model';
+import {AreaConhecimento} from '../../../models/area-conhecimento.model';
 import {QuestaoService} from '../../../services/questao.service';
 import {NotificacaoService} from '../../../services/notificacao.service';
 import {AreaConhecimentoService} from '../../../services/areaconhecimento.service';

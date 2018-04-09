@@ -1,9 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, ValidationErrors, Validators} from '@angular/forms';
 import {UsuarioService} from '../services/usuario.service';
-import {Usuario} from '../usuario-prof/user-profile/usuario.model';
-import {Router} from '@angular/router';
+import {Usuario} from '../models/usuario.model';
 import {LoginService} from '../services/login.service';
+import {isUndefined} from 'util';
+import {
+    Ng4FilesService,
+    Ng4FilesConfig,
+    Ng4FilesStatus,
+    Ng4FilesSelected
+} from 'ng4-files';
+
 
 declare const $: any;
 
@@ -15,30 +22,51 @@ declare const $: any;
 export class CadastroComponent implements OnInit {
 
   userForm: FormGroup;
-  profForm: FormGroup;
   professor: boolean = false;
   user: Usuario;
+  errors: any;
+  status_error: boolean = false;
+  pdf;
+  fileToUpload: File = null;
+  type_error: string = 'info'
+  public documento_comprovante;
 
-  constructor(private router: Router,private fb: FormBuilder, private usuarioService: UsuarioService, private loginSer: LoginService) { }
+    private sharedConfig: Ng4FilesConfig = {
+        acceptExtensions: ['pdf'],
+        maxFilesCount: 1,
+        maxFileSize: 512000000,
+        totalFilesSize: 1012000000
+    };
+
+    private namedConfig: Ng4FilesConfig = {
+        acceptExtensions: ['pdf'],
+        maxFilesCount: 2,
+        maxFileSize: 512000000,
+        totalFilesSize: 1012000000
+    };
+
+  constructor(private fb: FormBuilder,
+              private usuarioService: UsuarioService,
+              private login: LoginService,
+              private ng4FilesService: Ng4FilesService) { }
 
   ngOnInit() {
+      this.login.login('','',false).subscribe(token => localStorage.setItem('token', JSON.stringify(token)) );
       $.material.init();
+      this.ng4FilesService.addConfig(this.sharedConfig);
+      this.ng4FilesService.addConfig(this.namedConfig, 'another-config');
       this.userForm = this.fb.group({
           name: this.fb.control('', [Validators.required]),
           email: this.fb.control('', [Validators.required]),
           sexo: this.fb.control('', [Validators.required]),
           telefone: this.fb.control('', [Validators.required]),
           password: this.fb.control('', [Validators.required]),
-          password_confirmation: this.fb.control('', [Validators.required])
+          password_confirmation: this.fb.control('', [Validators.required]),
+          info_client: this.fb.control('', [Validators.required]),
+          matricula: this.fb.control('',[Validators.required]),
+          cpf: this.fb.control('',[Validators.required]),
+          documento_comprovante: [this.documento_comprovante, Validators.required]
       });
-      this.profForm = this.fb.group({
-              nome_prof: this.fb.control('',[]),
-              matricula_prof: this.fb.control('',[]),
-              cpf: this.fb.control('',[]),
-              documento_comprovante: this.fb.control('',[]),
-              professor_id: ''
-      });
-      this.usuarioService.getToken();
   }
 
   toToggleProfessor(){
@@ -48,20 +76,101 @@ export class CadastroComponent implements OnInit {
           this.professor = true;
       }
     }
-  addUsuario(usuario, professor) {
-
-        this.usuarioService.addUser(usuario).subscribe(
+  addUsuario(usuario) {
+      usuario.info_client = 3;
+      if(this.professor){
+        this.usuarioService.addProf(usuario).subscribe(
             response => {
-                this.user = response['data'];
                 this.userForm.reset();
-                this.loginSer.token = undefined;
-                this.router.navigate(['/login']);
+                const message: any[] = ['Cadastro efetuado com sucesso!'];
+                this.setError(message, 'success')
+            },
+            error => {
+                this.setErrors(error, 'danger');
+
             }
         );
-        if(this.professor){
-            usuario.professor.professor_id = this.user.id;
-            //this.usuarioService.addProf()
-        }
+      }else{
+        this.usuarioService.addUser(usuario).subscribe(
+            response => {
+                this.user = response;
+            },
+            error => {
+                this.setErrors(error, 'danger');
+            }
+        );
+      }
+
+    }
+    setErrors(error, type){
+
+        const err = new Errors();
+        const retorno: Errors = error.error.errors;
+        this.setError(err.setErrors(retorno), type);
+
     }
 
+    setError(array, type){
+      this.type_error = type;
+      this.errors = array;
+      this.status_error = true;
+    }
+
+    toCloseMessages(){ this.status_error = false; }
+
+
+    filesSelect(documento: Ng4FilesSelected) {
+
+        if (documento.status !== Ng4FilesStatus.STATUS_SUCCESS) {
+            this.documento_comprovante = documento.status;
+            return;
+        }
+        this.documento_comprovante = Array.from(documento.files).map(file => file.name);
+        this.pdf = Array.from(documento.files).map(file => file);
+
+
+    }
+
+    handleFileInput(files: FileList) {
+        this.fileToUpload = files.item(0);
+        console.log(this.fileToUpload)
+    }
+    onFileChange($event){
+        const file = $event.target.files[0]; // <--- File Object for future use.
+        this.userForm.controls['documento_comprovante'].setValue(file ? file.name : '');
+    }
+
+}
+export class Errors{
+    email: string = undefined
+    name: string = undefined
+    password: string = undefined
+    telefone: number = undefined
+    sexo: string = undefined
+    matricula: string = undefined
+    cpf: string = undefined
+    documento_comprovante: any = undefined
+
+    setErrors(dados: Errors): any[] {
+        const re: any[] = []
+
+        if(!isUndefined(dados.email))
+            re.push(dados.email[0])
+        if(!isUndefined(dados.name))
+            re.push(dados.name[0])
+        if(!isUndefined(dados.password))
+            re.push(dados.password[0])
+        if(!isUndefined(dados.telefone))
+            re.push(dados.telefone[0])
+        if(!isUndefined(dados.sexo))
+            re.push(dados.sexo[0])
+        if(!isUndefined(dados.matricula))
+            re.push(dados.matricula[0])
+        if(!isUndefined(dados.cpf))
+            re.push(dados.cpf[0])
+        if(!isUndefined(dados.documento_comprovante))
+            re.push(dados.documento_comprovante[0])
+
+        return re;
+    }
 }

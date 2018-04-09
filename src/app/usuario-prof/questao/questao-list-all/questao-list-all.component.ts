@@ -1,6 +1,6 @@
 import {Component, OnInit, Input, Output} from '@angular/core';
 
-import {Questao} from '../questao.model';
+import {Questao} from '../../../models/questao.model';
 
 @Component({
     selector: 'app-questao-list-all',

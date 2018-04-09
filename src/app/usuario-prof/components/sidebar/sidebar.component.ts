@@ -8,10 +8,11 @@ declare interface RouteInfo {
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: 'dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
+    { path: 'dash', title: 'Dashboard',  icon: 'dashboard', class: '' },
     { path: 'user-profile', title: 'User Profile',  icon:'person', class: '' },
     { path: 'questao', title: 'Questões',  icon:'bubble_chart', class: '' },
 ];
+
 
 @Component({
   selector: 'app-sidebar',
@@ -24,6 +25,7 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
+
   }
   isMobileMenu() {
       if ($(window).width() > 991) {

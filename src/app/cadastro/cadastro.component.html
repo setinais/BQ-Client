@@ -1,6 +1,6 @@
 <div class="col-md-10 col-md-offset-1">
     <div class="card card-nav-tabs">
-        <div class="card-header" data-background-color="red">
+        <div class="card-header" data-background-color="blue">
             <div class="nav-tabs-navigation">
                 <div class="nav-tabs-wrapper">
                     <span class="nav-tabs-title">Opções</span>
@@ -17,7 +17,9 @@
                                 Professor
                                 <div class="ripple-container"></div></a>
                         </li>
-
+                        <li class="pull-right">
+                            <a href="" routerLink="/login" class="btn">Login</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -26,12 +28,25 @@
         <div class="card-content">
             <h3>Cadastro</h3>
 
+            <div *ngIf="status_error" class="alert alert-{{type_error}}">
+                <div class="container-fluid">
+                    <div class="alert-icon" class="col-md-3">
+                        <i class="material-icons">error_outline</i> Confira os errors :
+                    </div>
+                    <button (click)="toCloseMessages()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                    </button>
+                    <div class="col-md-offset-3" *ngFor="let message of errors">
+                        <p><i class="material-icons">fiber_manual_record</i>  {{ message }} </p>
+                    </div>
+                </div>
+            </div>
             <div class="tab-content">
                 <div class="tab-pane active" id="usuario">
                     <form [formGroup]="userForm" novalidate>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <app-input-container errorMessage="Campo Obrigatorio" label="Primeiro Nome">
+                                    <app-input-container errorMessage="Campo Obrigatorio" label="Nome">
                                         <input type="text" class="form-control" formControlName="name" autocomplete="off">
                                     </app-input-container>
                                 </div>
@@ -44,12 +59,12 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <app-input-container errorMessage="Campo Obrigatorio" label="Senha">
-                                        <input type="password" class="form-control" formControlName="password" autocomplete="off">
+                                        <input class="form-control" type="password" formControlName="password" autocomplete="off">
                                     </app-input-container>
                                 </div>
                                 <div class="col-md-4">
                                     <app-input-container errorMessage="Campo Obrigatorio" label="Confirme a Senha">
-                                        <input type="password" class="form-control" formControlName="password_confirmation" autocomplete="off">
+                                        <input class="form-control" type="password" formControlName="password_confirmation" autocomplete="off">
                                     </app-input-container>
                                 </div>
                                 <div class="col-md-3 col-md-offset-1">
@@ -72,16 +87,46 @@
                                 </div>
                             </div>
                         <div class="tab-pane" *ngIf="professor">
-                            <div [formGroup]="profForm">
 
-                            </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <app-input-container errorMessage="Campo Obrigatorio" label="Matricula">
+                                            <input class="form-control" formControlName="matricula" autocomplete="off">
+                                        </app-input-container>
+                                    </div>
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <app-input-container errorMessage="Campo Obrigatorio" label="CPF">
+                                            <input class="form-control" formControlName="cpf" autocomplete="off">
+                                        </app-input-container>
+                                    </div>
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <!--
+                                         <ng4-files-click (filesSelect)="filesSelect($event)">
+                                            <span class="btn btn-info">Declaração de Vinculo</span>
+                                        </ng4-files-click>
+
+                                        <hr />
+
+                                        <ng4-files-drop (filesSelect)="filesSelect($event)" [configId]="'another-config'">
+                                            <div style="">
+                                                {{documento_comprovante}}
+                                            </div>
+                                        </ng4-files-drop>
+
+                                        <div class="form-group">
+                                            <label for="file" class="btn btn-info">Choose File</label>
+                                            <input id="file" class="form-control" type="file" (change)="onFileChange($event)">
+                                            <input type="hidden" name="fileHidden" formControlName="documento_comprovante">
+                                        </div> -->
+
+                                    </div>
+                                </div>
+
                         </div>
                         <div class="row">
-                            <button (click)="addUsuario(userForm.value,profForm.value)" class="btn btn-success btn-lg pull-right"
+                            <button class="btn btn-info btn-lg pull-left" routerLink="/">Voltar</button>
+                            <button (click)="addUsuario(userForm.value)" class="btn btn-success btn-lg pull-right"
                             >Salvar
-                            </button>
-                            <button routerLink="/" class="btn btn-info btn-lg pull-right"
-                            >Home
                             </button>
                         </div>
                     </form>

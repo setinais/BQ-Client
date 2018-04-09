@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Observable';
 
 import {URL_API} from '../urls';
 
-import {AreaConhecimento} from '../usuario-prof/questao/area-conhecimento.model';
+import {AreaConhecimento} from '../models/area-conhecimento.model';
 
 @Injectable()
 export class AreaConhecimentoService {
@@ -13,7 +13,7 @@ export class AreaConhecimentoService {
 
 
     getAreaConhecimento(): Observable<AreaConhecimento[]>{
-        return this.http.get<AreaConhecimento[]>(`${URL_API}/area-conhecimento/categorias`)
+        return this.http.get<AreaConhecimento[]>(`${URL_API}/api/area-conhecimento/categorias`)
     }
 
     getSubCategoria(id: number,pag?: number): Observable<AreaConhecimento[]>{
@@ -21,15 +21,15 @@ export class AreaConhecimentoService {
         if(pag){
             params = new HttpParams().set('page', pag.toString())
         }
-        return this.http.get<AreaConhecimento[]>(`${URL_API}/area-conhecimento/sub-categorias/${id}`, {params: params})
+        return this.http.get<AreaConhecimento[]>(`${URL_API}/api/area-conhecimento/sub-categorias/${id}`, {params: params})
     }
 
     addAreaConhecimento(areaConhecimento: AreaConhecimento): Observable<any>{
-        return this.http.post<any>(`${URL_API}/area-conhecimento`, areaConhecimento);
+        return this.http.post<any>(`${URL_API}/api/area-conhecimento`, areaConhecimento);
     }
 
     deleteAreaConhecimento(areaConhecimento: AreaConhecimento | number): Observable<AreaConhecimento> {
         const id = typeof areaConhecimento === 'number' ? areaConhecimento : areaConhecimento.id;
-        return this.http.delete<AreaConhecimento>(`${URL_API}/area-conhecimento/${id}`)
+        return this.http.delete<AreaConhecimento>(`${URL_API}/api/area-conhecimento/${id}`)
     }
 }

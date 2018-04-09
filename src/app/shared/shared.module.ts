@@ -3,10 +3,11 @@ import {InputComponent} from './input/input.component';
 import {CommonModule} from '@angular/common';
 import {ReactiveFormsModule} from '@angular/forms';
 import {SelectComponent} from './select/select.component';
+import { LoadingComponent } from './loading/loading.component';
 
 
 @NgModule({
-    declarations: [InputComponent, SelectComponent],
+    declarations: [InputComponent, SelectComponent, LoadingComponent],
     imports: [CommonModule, ReactiveFormsModule],
     exports: [InputComponent, CommonModule, ReactiveFormsModule, SelectComponent]
 })

@@ -20,7 +20,7 @@
                   </div>
                     <div class="col-md-12">
                     <app-input-container errorMessage="Campo Obrigatorio" label="Senha">
-                      <input type="password" class="form-control" formControlName="password">
+                      <input class="form-control" type="password" formControlName="password">
                     </app-input-container>
                     </div>
                     <button class="btn btn-default btn-login" (click)="login(loginForm.value)" type="button">Login</button>
@@ -33,7 +33,7 @@
           <div class="modal-footer">
             <div class="forgot login-footer">
                             <span>Looking to
-                                 <a href="">create an account</a>
+                                 <a href="" routerLink="/cadastro">create an account</a>
                             ?</span>
             </div>
             <div class="forgot register-footer" style="display:none">

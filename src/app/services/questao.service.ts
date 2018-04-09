@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Observable';
 
 import {URL_API} from '../urls';
 
-import {Questao} from '../usuario-prof/questao/questao.model';
+import {Questao} from '../models/questao.model';
 
 @Injectable()
 export class QuestaoService {
@@ -13,12 +13,11 @@ export class QuestaoService {
 
 
     getQuestaoAll(pag?: number): Observable<Questao[]>{
-        console.log(URL_API);
         let params: HttpParams = undefined;
         if(pag){
             params = new HttpParams().set('page', pag.toString())
         }
-        return this.http.get<Questao[]>(`${URL_API}/questao`, {params: params})
+        return this.http.get<Questao[]>(`${URL_API}/api/questao`, {params: params})
     }
 
     getQuestao(id: number,pag?: number): Observable<Questao[]>{
@@ -26,11 +25,11 @@ export class QuestaoService {
         if(pag){
             params = new HttpParams().set('page', pag.toString())
         }
-        return this.http.get<Questao[]>(`${URL_API}/questao/${id}`, {params: params})
+        return this.http.get<Questao[]>(`${URL_API}/api/questao/${id}`, {params: params})
     }
 
     addQuestao(questao: Questao): Observable<any>{
-        return this.http.post<any>(`${URL_API}/questao`, questao);
+        return this.http.post<any>(`${URL_API}/api/questao`, questao);
     }
 
     deleteQuestao(questao: Questao | number): Observable<Questao> {
