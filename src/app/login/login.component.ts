@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {
         localStorage.clear();
-        this.loginService.login('1@1.com','123456',true).subscribe(r => {this.router.navigate([atob(btoa('/usuario/user-profile'))]);});
+        this.loginService.login('carvalho@12.com','123456',true).subscribe(r => {this.router.navigate([atob(btoa('/usuario/prova'))]);});
         $.material.init();
         this.loginForm = this.fb.group({
             username: this.fb.control('', [Validators.required, Validators.email]),

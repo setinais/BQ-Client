@@ -8,9 +8,6 @@ import {ClientPassword} from '../models/client_password.model';
 import {ClientCredentials} from '../models/client_credentials.model';
 import {Token} from '../models/token.model';
 import {Observable} from 'rxjs/Observable';
-import {Guard} from '../models/guard.model';
-import {Usuario} from '../models/usuario.model';
-
 @Injectable()
 export class LoginService {
 
@@ -18,14 +15,14 @@ export class LoginService {
     client_password: ClientPassword = {
         grant_type: 'password',
         client_id : 3,
-        client_secret : 'OVGbYEuXmZnejENsAHhYcroSKQszQz9KI69LSgzf',
+        client_secret : 'HAV4Y3blSQA5qPhPW41REIkWhBO6qzZAF3H7rx7P',
         username: '',
         password: ''
     };
     client_credentials: ClientCredentials = {
         grant_type : 'client_credentials',
         client_id : 3,
-        client_secret : 'OVGbYEuXmZnejENsAHhYcroSKQszQz9KI69LSgzf'
+        client_secret : 'HAV4Y3blSQA5qPhPW41REIkWhBO6qzZAF3H7rx7P'
     };
 
     constructor(private http: HttpClient,
@@ -42,17 +39,18 @@ export class LoginService {
             this.client_password.password = password
             return this.http.post<Token>(`${URL_API}/oauth/token`, this.client_password)
                 .do( token => {
-                        console.log(this.isLoggin);
                         localStorage.setItem('token', JSON.stringify(token));
                         localStorage.setItem('status', 'true');
                         this.isLoggin = true;
-                        this.getGuard().subscribe(response => { }, error => {});
+                    }, error => {
                     }
                 );
         }else{
+            this.isLoggin = true;
             return this.http.post<Token>(`${URL_API}/oauth/token`, this.client_credentials)
                 .do( token => localStorage.setItem('token', JSON.stringify(token)) );
         }
+
     }
 
     handleLogin(path?: string) {
@@ -65,13 +63,4 @@ export class LoginService {
         this.handleLogin('/');
     }
 
-    getGuard(): Observable<Guard> {
-        return this.http.get<Guard>(`${URL_API}/api/controle-acesso/guard`).do(
-            response => {
-                localStorage.setItem('user', JSON.stringify(response.user));
-                localStorage.setItem('acesso', JSON.stringify(response.acesso));
-            }, error => {
-                this.handleLogin('/login');
-            })
-    }
 }

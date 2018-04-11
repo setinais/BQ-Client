@@ -27,12 +27,6 @@
                                             Todas Questões
                                             <div class="ripple-container"></div></a>
                                     </li>
-                                    <li class="">
-                                        <a href="#init" (click)="init()" data-toggle="tab">
-                                            <i class="material-icons">person</i>
-                                            Elaborar Prova
-                                            <div class="ripple-container"></div></a>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -50,9 +44,6 @@
                             <div class="tab-pane" id="settings">
                                 <app-questao-list-all [questoesAlls]="questoesAlls" (edit)="edit($event)"
                                                   (delete)="delete($event)"></app-questao-list-all>
-                            </div>
-                            <div class="tab-pane" id="init">
-                                <app-questao-prova></app-questao-prova>
                             </div>
                         </div>
                     </div>

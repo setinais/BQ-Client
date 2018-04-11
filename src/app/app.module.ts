@@ -18,7 +18,6 @@ import { UsuarioProfModule } from './usuario-prof/usuario-prof.module';
 import { IndexComponent } from './index/index.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import {LoginComponent} from './login/login.component';
-import { Ng4FilesModule } from 'ng4-files';
 
 @NgModule({
   declarations: [
@@ -36,7 +35,6 @@ import { Ng4FilesModule } from 'ng4-files';
     RouterModule,
     ServicesModule,
     UsuarioProfModule,
-    Ng4FilesModule,
     AppRoutingModule,
   ],
   providers: [httpInterceptorsProviders, {provide: LocationStrategy, useClass: HashLocationStrategy},

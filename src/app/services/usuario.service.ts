@@ -9,7 +9,7 @@ import {LoginService} from './login.service';
 @Injectable()
 export class UsuarioService {
 
-    constructor(private http: HttpClient, private login: LoginService) {}
+    constructor(private http: HttpClient) {}
 
     addUser(usuario: Usuario): Observable<Usuario> {
         return this.http.post<Usuario>(`${URL_API}/api/usuario`, usuario)
@@ -18,6 +18,17 @@ export class UsuarioService {
     addProf(usuario: Usuario): Observable<Usuario> {
         return this.http.post<Usuario>(`${URL_API}/api/professor`, usuario)
 
+    }
+
+    getUser(): Observable<Usuario> {
+        return this.http.get<Usuario>(`${URL_API}/api/controle-acesso/guard`)
+    }
+
+    editUser(usuario: Usuario): Observable<Usuario> {
+        return this.http.put<Usuario>(`${URL_API}/api/usuario/${usuario.id}}`, usuario)
+    }
+    editProf(usuario: Usuario): Observable<Usuario> {
+        return this.http.put<Usuario>(`${URL_API}/api/professor/${usuario.id}}`, usuario)
     }
 }
 

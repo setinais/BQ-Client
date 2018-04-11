@@ -8,12 +8,14 @@ import {UsuarioProfComponent} from './usuario-prof.component';
 import {QuestaoComponent} from './questao/questao.component';
 import {LoggedInGuard} from '../login/log.guard';
 import {UserProfileModule} from './user-profile/user-profile.module';
+import {ProvaComponent} from './prova/prova.component';
 
 const ROUTES: Routes = [
     { path: 'usuario', component: UsuarioProfComponent, children: [
             {path: '', redirectTo: '/usuario/dash' , pathMatch: 'full'},
             { path: 'dash',      component: DashboardComponent },
             { path: 'questao', component: QuestaoComponent},
+            { path: 'prova', component: ProvaComponent },
             { path: 'user-profile',   component: UserProfileComponent },
 
         ], canActivate: [LoggedInGuard]},
@@ -22,8 +24,9 @@ const ROUTES: Routes = [
 @NgModule({
     declarations: [
         DashboardComponent,
-        UsuarioProfComponent],
-    imports: [ComponentsModule, QuestaoModule, RouterModule.forChild(ROUTES), UserProfileModule],
+        UsuarioProfComponent,
+        ProvaComponent],
+    imports: [ComponentsModule, QuestaoModule, RouterModule.forChild(ROUTES), UserProfileModule ],
     exports: [],
     providers: [LoggedInGuard]
 })

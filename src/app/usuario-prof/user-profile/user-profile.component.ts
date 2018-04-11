@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {LoginService} from '../../services/login.service';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UsuarioService} from '../../services/usuario.service';
 import {Usuario} from '../../models/usuario.model';
 
 @Component({
@@ -11,29 +11,23 @@ import {Usuario} from '../../models/usuario.model';
 export class UserProfileComponent implements OnInit {
 
   public userForm: FormGroup
-  public dados: Usuario
-  constructor(private auth: LoginService, private fb: FormBuilder) { }
+    public user: Usuario
+    private status: boolean = true;
+  constructor( private fb: FormBuilder, private userService: UsuarioService) { }
 
   ngOnInit() {
-    console.log(localStorage)
-      const user = localStorage.getItem('status');
-    console.log(user);
       this.userForm = this.fb.group({
-          name: this.fb.control(`${user}`, [Validators.required]),
-          email: this.fb.control('', [Validators.required]),
-          sexo: this.fb.control('', [Validators.required]),
-          telefone: this.fb.control('', [Validators.required]),
-          password: this.fb.control('', [Validators.required]),
-          password_confirmation: this.fb.control('', [Validators.required]),
-          matricula: this.fb.control('',[Validators.required]),
-          cpf: this.fb.control('',[Validators.required]),
+          name: this.fb.control(``, [Validators.required]),
+          email: this.fb.control(``, [Validators.required]),
+          matricula: this.fb.control(``, [Validators.required]),
+
       });
-
-
+      this.userService.getUser().subscribe(response => {
+        this.userForm.setValue({
+            name: response[0].name,
+            email: response[0].email,
+            matricula: response[0].professor.matricula,
+        });
+      })
   }
-
-  teste(){
-      console.log(this.userForm);
-  }
-
 }

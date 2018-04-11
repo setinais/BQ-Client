@@ -5,6 +5,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import PerfectScrollbar from 'perfect-scrollbar';
+import {LoginService} from '../services/login.service';
 
 declare const $: any;
 
@@ -52,6 +53,7 @@ export class UsuarioProfComponent implements OnInit {
             let ps = new PerfectScrollbar(elemMainPanel);
             ps = new PerfectScrollbar(elemSidebar);
         }
+
     }
     ngAfterViewInit() {
         this.runOnRouteChange();

@@ -4,7 +4,6 @@ import {Questao} from '../../models/questao.model';
 import {QuestaoService} from '../../services/questao.service';
 import {NotificacaoService} from '../../services/notificacao.service';
 import {UsuarioService} from '../../services/usuario.service';
-import {LoginService} from '../../services/login.service';
 
 
 @Component({

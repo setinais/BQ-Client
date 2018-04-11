@@ -10,52 +10,53 @@
                 <div class="card-content">
                     <form [formGroup]="userForm" novalidate>
                         <div class="row">
+
                             <div class="col-md-10">
-                                    <app-input-container errorMessage="Campo Obrigatorio" label="Nome">
+                                    <app-input-container errorMessage="Campo Obrigatorio" label="Nome" [value]="status">
                                         <input class="form-control" formControlName="name" autocomplete="off">
                                     </app-input-container>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8">
-                                <app-input-container errorMessage="Campo Obrigatorio" label="E-mail">
+                                <app-input-container errorMessage="Campo Obrigatorio" label="E-mail" [value]="status">
                                     <input class="form-control" formControlName="email" autocomplete="off" >
                                 </app-input-container>
                             </div>
                         </div>
 
                         <div class="col-md-4">
-                            <app-input-container errorMessage="Campo Obrigatorio" label="Matricula">
+                            <app-input-container errorMessage="Campo Obrigatorio" label="Matricula" [value]="status">
                                 <input class="form-control" formControlName="matricula" autocomplete="off">
                             </app-input-container>
                         </div>
-                        <div class="col-md-4">
-                            <app-input-container errorMessage="Campo Obrigatorio" label="CPF">
-                                <input class="form-control" formControlName="cpf" autocomplete="off">
-                            </app-input-container>
-                        </div>
-                        <div class="col-md-4">
-                            <app-input-container errorMessage="Campo Obrigatorio" label="Telefone">
-                                <input class="form-control" formControlName="telefone" autocomplete="off">
-                            </app-input-container>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h4>Sexo: </h4>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" formControlName="sexo" value="Masculino"/>
-                                        Masculino
-                                    </label>
-                                    <label>
-                                        <input type="radio" formControlName="sexo" value="Feminino"/>
-                                        Feminino
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+                        <!--<div class="col-md-4">-->
+                            <!--<app-input-container errorMessage="Campo Obrigatorio" label="CPF">-->
+                                <!--<input class="form-control" formControlName="cpf" autocomplete="off">-->
+                            <!--</app-input-container>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-4">-->
+                            <!--<app-input-container errorMessage="Campo Obrigatorio" label="Telefone">-->
+                                <!--<input class="form-control" formControlName="telefone" autocomplete="off">-->
+                            <!--</app-input-container>-->
+                        <!--</div>-->
+                        <!--<div class="row">-->
+                            <!--<div class="col-md-12">-->
+                                <!--<h4>Sexo: </h4>-->
+                                <!--<div class="radio">-->
+                                    <!--<label>-->
+                                        <!--<input type="radio" formControlName="sexo" value="Masculino"/>-->
+                                        <!--Masculino-->
+                                    <!--</label>-->
+                                    <!--<label>-->
+                                        <!--<input type="radio" formControlName="sexo" value="Feminino"/>-->
+                                        <!--Feminino-->
+                                    <!--</label>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
 
-                        <button (click)="teste()" class="btn btn-danger pull-right">Atualizar Perfil</button>
+                        <button (click)="getUser()" class="btn btn-danger pull-right">Atualizar Perfil</button>
                         <div class="clearfix"></div>
                     </form>
                 </div>

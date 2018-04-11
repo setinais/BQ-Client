@@ -5,6 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import {URL_API} from '../urls';
 
 import {AreaConhecimento} from '../models/area-conhecimento.model';
+import {AreaConhecimentoEncadeado} from '../models/area-conhecimento-encadeado.model';
 
 @Injectable()
 export class AreaConhecimentoService {
@@ -31,5 +32,9 @@ export class AreaConhecimentoService {
     deleteAreaConhecimento(areaConhecimento: AreaConhecimento | number): Observable<AreaConhecimento> {
         const id = typeof areaConhecimento === 'number' ? areaConhecimento : areaConhecimento.id;
         return this.http.delete<AreaConhecimento>(`${URL_API}/api/area-conhecimento/${id}`)
+    }
+
+    getAreasEncadeada(): Observable<AreaConhecimentoEncadeado[]> {
+        return this.http.get<AreaConhecimentoEncadeado[]>(`${URL_API}/api/area-conhecimento/areas-encadeadas`);
     }
 }

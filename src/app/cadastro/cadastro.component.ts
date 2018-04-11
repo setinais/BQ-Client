@@ -4,12 +4,8 @@ import {UsuarioService} from '../services/usuario.service';
 import {Usuario} from '../models/usuario.model';
 import {LoginService} from '../services/login.service';
 import {isUndefined} from 'util';
-import {
-    Ng4FilesService,
-    Ng4FilesConfig,
-    Ng4FilesStatus,
-    Ng4FilesSelected
-} from 'ng4-files';
+import {Router} from '@angular/router';
+
 
 
 declare const $: any;
@@ -31,30 +27,17 @@ export class CadastroComponent implements OnInit {
   type_error: string = 'info'
   public documento_comprovante;
 
-    private sharedConfig: Ng4FilesConfig = {
-        acceptExtensions: ['pdf'],
-        maxFilesCount: 1,
-        maxFileSize: 512000000,
-        totalFilesSize: 1012000000
-    };
 
-    private namedConfig: Ng4FilesConfig = {
-        acceptExtensions: ['pdf'],
-        maxFilesCount: 2,
-        maxFileSize: 512000000,
-        totalFilesSize: 1012000000
-    };
 
   constructor(private fb: FormBuilder,
               private usuarioService: UsuarioService,
               private login: LoginService,
-              private ng4FilesService: Ng4FilesService) { }
+              private router: Router) { }
 
   ngOnInit() {
-      this.login.login('','',false).subscribe(token => localStorage.setItem('token', JSON.stringify(token)) );
+      this.login.login('','',false).subscribe(token => localStorage.setItem('token', JSON.stringify(token)) , error => console.log(error) );
       $.material.init();
-      this.ng4FilesService.addConfig(this.sharedConfig);
-      this.ng4FilesService.addConfig(this.namedConfig, 'another-config');
+      console.log(localStorage)
       this.userForm = this.fb.group({
           name: this.fb.control('', [Validators.required]),
           email: this.fb.control('', [Validators.required]),
@@ -70,6 +53,7 @@ export class CadastroComponent implements OnInit {
   }
 
   toToggleProfessor(){
+      console.log(localStorage)
       if(this.professor){
           this.professor = false;
       }else{
@@ -81,11 +65,14 @@ export class CadastroComponent implements OnInit {
       if(this.professor){
         this.usuarioService.addProf(usuario).subscribe(
             response => {
+                this.login.isLoggin = false;
                 this.userForm.reset();
                 const message: any[] = ['Cadastro efetuado com sucesso!'];
                 this.setError(message, 'success')
+                this.router.navigate(['/login'])
             },
             error => {
+                console.log(error)
                 this.setErrors(error, 'danger');
 
             }
@@ -93,7 +80,12 @@ export class CadastroComponent implements OnInit {
       }else{
         this.usuarioService.addUser(usuario).subscribe(
             response => {
+                this.login.isLoggin = false;
                 this.user = response;
+                this.userForm.reset();
+                const message: any[] = ['Cadastro efetuado com sucesso!'];
+                this.setError(message, 'success')
+                this.router.navigate(['/login'])
             },
             error => {
                 this.setErrors(error, 'danger');
@@ -117,19 +109,6 @@ export class CadastroComponent implements OnInit {
     }
 
     toCloseMessages(){ this.status_error = false; }
-
-
-    filesSelect(documento: Ng4FilesSelected) {
-
-        if (documento.status !== Ng4FilesStatus.STATUS_SUCCESS) {
-            this.documento_comprovante = documento.status;
-            return;
-        }
-        this.documento_comprovante = Array.from(documento.files).map(file => file.name);
-        this.pdf = Array.from(documento.files).map(file => file);
-
-
-    }
 
     handleFileInput(files: FileList) {
         this.fileToUpload = files.item(0);

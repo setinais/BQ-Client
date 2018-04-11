@@ -1,4 +1,5 @@
 import {Professor} from './Professor.model';
+import {Acesso} from './acesso.model';
 
 export interface Usuario{
     id: number

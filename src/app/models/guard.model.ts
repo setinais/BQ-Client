@@ -9,9 +9,5 @@ export class Guard {
     public isLoggin: boolean
     public name: string
 
-    setToken(token: Token){
-        this.token = token;
-        this.isLoggin = true;
-    }
 }
 

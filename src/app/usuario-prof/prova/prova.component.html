@@ -1,0 +1,32 @@
+<div class="main-content">
+    <div class="row">
+        <div class="card card-stats">
+            <div class="card-header" data-background-color="orange">
+                <i class="material-icons">content_copy</i>
+            </div>
+            <div class="card-content">
+                <p class="category">Questões Selecionadas</p>
+                <h3 class="title">49/50<small>GB</small></h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Categorias</h3>
+                            <div class="col-md-12">
+                                <ul class="list-group" *ngFor="let areas_conhecimento of areas_conhecimentos">
+                                    <li class="li-icon-align" (click)="dropDown(areas_conhecimento.id)" (dblclick)="selected()"><i class="icon-position material-icons">add</i> Portugues</li>
+                                        <ul>
+                                            <li class="li-icon-align"><i class="icon-position material-icons">add</i> Matematica</li>
+                                            <li class="li-icon-align"><i class="icon-position material-icons">add</i> Matematica</li>
+                                        </ul>
+                                    <li class="li-icon-align"><i class="icon-position material-icons">add</i> Matematica</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
