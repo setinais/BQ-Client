@@ -14,13 +14,16 @@
                         <div class="col-md-12">
                             <h3>Categorias</h3>
                             <div class="col-md-12">
-                                <ul class="list-group" *ngFor="let areas_conhecimento of areas_conhecimentos">
-                                    <li class="li-icon-align" (click)="dropDown(areas_conhecimento.id)" (dblclick)="selected()"><i class="icon-position material-icons">add</i> Portugues</li>
-                                        <ul>
-                                            <li class="li-icon-align"><i class="icon-position material-icons">add</i> Matematica</li>
-                                            <li class="li-icon-align"><i class="icon-position material-icons">add</i> Matematica</li>
+                                <ul class="list-group"*ngFor="let areas_conhecimento of areas_conhecimentos; let i = index">
+                                    <li class="li-icon-align"  (click)="dropDown(areas_conhecimento.id)" (dblclick)="selected(areas_conhecimento)">
+                                        <i class="icon-position material-icons">{{ (areas_conhecimento.id === idSelected) ? 'remove' : 'add' }}</i> {{ areas_conhecimento.area_de_conhecimento }}
+                                    </li>
+                                        <ul *ngIf="areas_conhecimento.id === idSelected" >
+                                            <li  *ngFor="let subcategoria of areas_conhecimento.sub_categoria_id; let i = index" class="li-icon-align" (dblclick)="selected(subcategoria)">
+                                                {{ subcategoria.area_de_conhecimento }}
+                                            </li>
+
                                         </ul>
-                                    <li class="li-icon-align"><i class="icon-position material-icons">add</i> Matematica</li>
                                 </ul>
                             </div>
                         </div>

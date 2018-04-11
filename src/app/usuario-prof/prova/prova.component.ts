@@ -11,7 +11,7 @@ import {AreaConhecimentoService} from '../../services/areaconhecimento.service';
 export class ProvaComponent implements OnInit {
 
     material_icon: string = 'add';
-
+    idSelected: number
     areas_conhecimentos: AreaConhecimentoEncadeado[];
 
     constructor(private areaService: AreaConhecimentoService){}
@@ -23,8 +23,15 @@ export class ProvaComponent implements OnInit {
         });
     }
 
-    dropDown(){
-        this.material_icon = 'remove';
+    dropDown(id: number){
+        if(id === this.idSelected)
+        {
+            this.idSelected = undefined;
+        }
+        else{
+            this.idSelected = id;
+        }
+
     }
     selected(){
         console.log('few')

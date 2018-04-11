@@ -9,6 +9,7 @@ import {QuestaoComponent} from './questao/questao.component';
 import {LoggedInGuard} from '../login/log.guard';
 import {UserProfileModule} from './user-profile/user-profile.module';
 import {ProvaComponent} from './prova/prova.component';
+import {ProvaModule} from './prova/prova.module';
 
 const ROUTES: Routes = [
     { path: 'usuario', component: UsuarioProfComponent, children: [
@@ -24,9 +25,8 @@ const ROUTES: Routes = [
 @NgModule({
     declarations: [
         DashboardComponent,
-        UsuarioProfComponent,
-        ProvaComponent],
-    imports: [ComponentsModule, QuestaoModule, RouterModule.forChild(ROUTES), UserProfileModule ],
+        UsuarioProfComponent],
+    imports: [ComponentsModule, QuestaoModule, RouterModule.forChild(ROUTES), UserProfileModule, ProvaModule],
     exports: [],
     providers: [LoggedInGuard]
 })

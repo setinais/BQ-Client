@@ -2,38 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d26d9f5a-ddec-42f0-9382-916a80455f56" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.ts" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/services/user.service.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/usuario-prof/questao/area-conhecimento.model.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/usuario-prof/questao/questao-prova/questao-prova.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/usuario-prof/questao/questao-prova/questao-prova.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/usuario-prof/questao/questao.model.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/usuario-prof/user-profile/usuario.model.ts" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/services/area-conhecimento.service.ts" afterPath="$PROJECT_DIR$/src/app/models/area-conhecimento-encadeado.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/usuario-prof/prova/prova.module.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/cadastro/cadastro.component.ts" afterPath="$PROJECT_DIR$/src/app/cadastro/cadastro.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/login/login.component.ts" afterPath="$PROJECT_DIR$/src/app/login/login.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/models/area-conhecimento.model.ts" afterPath="$PROJECT_DIR$/src/app/models/area-conhecimento.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/models/guard.model.ts" afterPath="$PROJECT_DIR$/src/app/models/guard.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/models/usuario.model.ts" afterPath="$PROJECT_DIR$/src/app/models/usuario.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/services/areaconhecimento.service.ts" afterPath="$PROJECT_DIR$/src/app/services/areaconhecimento.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/services/login.service.ts" afterPath="$PROJECT_DIR$/src/app/services/login.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/services/usuario.service.ts" afterPath="$PROJECT_DIR$/src/app/services/usuario.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/input/input.component.html" afterPath="$PROJECT_DIR$/src/app/shared/input/input.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/input/input.component.ts" afterPath="$PROJECT_DIR$/src/app/shared/input/input.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/usuario-prof/components/sidebar/sidebar.component.ts" afterPath="$PROJECT_DIR$/src/app/usuario-prof/components/sidebar/sidebar.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/usuario-prof/questao/questao.component.html" afterPath="$PROJECT_DIR$/src/app/usuario-prof/questao/questao.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/usuario-prof/questao/questao.component.ts" afterPath="$PROJECT_DIR$/src/app/usuario-prof/questao/questao.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/usuario-prof/questao/questao.module.ts" afterPath="$PROJECT_DIR$/src/app/usuario-prof/questao/questao.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/usuario-prof/user-profile/user-profile.component.html" afterPath="$PROJECT_DIR$/src/app/usuario-prof/user-profile/user-profile.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/usuario-prof/user-profile/user-profile.component.ts" afterPath="$PROJECT_DIR$/src/app/usuario-prof/user-profile/user-profile.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/usuario-prof/usuario-prof.component.ts" afterPath="$PROJECT_DIR$/src/app/usuario-prof/usuario-prof.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/models/area-conhecimento-encadeado.model.ts" afterPath="$PROJECT_DIR$/src/app/models/area-conhecimento-encadeado.model.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.css" afterPath="$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.html" afterPath="$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.ts" afterPath="$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/usuario-prof/usuario-prof.module.ts" afterPath="$PROJECT_DIR$/src/app/usuario-prof/usuario-prof.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/environments/environment.ts" afterPath="$PROJECT_DIR$/src/environments/environment.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,8 +25,8 @@
       <file leaf-file-name="prova.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="441">
+              <caret line="31" column="33" lean-forward="false" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -59,41 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="prova.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="56" lean-forward="false" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="area-conhecimento-encadeado.model.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/models/area-conhecimento-encadeado.model.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="prova.component.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.css">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -109,14 +54,24 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="prova.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="186" lean-forward="false" selection-start-line="21" selection-start-column="186" selection-end-line="21" selection-end-column="186" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -131,7 +86,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/questao/questao-list/questao-list.compnent.ts" />
         <option value="$PROJECT_DIR$/src/app/questao/questao-list-all/questao-list-all.component.html" />
         <option value="$PROJECT_DIR$/src/app/questao/questao-list-all/questao-list-all.component.ts" />
         <option value="$PROJECT_DIR$/src/app-error.ts" />
@@ -177,11 +131,12 @@
         <option value="$PROJECT_DIR$/src/app/usuario-prof/questao/questao.component.html" />
         <option value="$PROJECT_DIR$/src/app/login/login.component.ts" />
         <option value="$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.scss.css" />
-        <option value="$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.css" />
-        <option value="$PROJECT_DIR$/src/app/models/area-conhecimento-encadeado.model.ts" />
-        <option value="$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.html" />
-        <option value="$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/usuario-prof/prova/prova.module.ts" />
         <option value="$PROJECT_DIR$/src/app/usuario-prof/usuario-prof.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/models/area-conhecimento-encadeado.model.ts" />
+        <option value="$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.css" />
+        <option value="$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.html" />
       </list>
     </option>
   </component>
@@ -242,6 +197,13 @@
               <item name="banco_de_questao_app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="banco_de_questao_app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="banco_de_questao_app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="usuario-prof" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -259,6 +221,14 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="usuario-prof" type="462c0819:PsiDirectoryNode" />
               <item name="prova" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="banco_de_questao_app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="banco_de_questao_app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="usuario-prof" type="462c0819:PsiDirectoryNode" />
+              <item name="questao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="banco_de_questao_app" type="b2602c69:ProjectViewProjectNode" />
@@ -340,12 +310,12 @@
       <workItem from="1523373155185" duration="2688000" />
       <workItem from="1523404843230" duration="831000" />
       <workItem from="1523405997294" duration="4385000" />
-      <workItem from="1523449844827" duration="8331000" />
+      <workItem from="1523449844827" duration="12301000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65743000" />
+    <option name="totallyTimeSpent" value="69713000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -358,7 +328,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25297618" sideWeight="0.48355263" order="0" side_tool="false" content_ui="combo" />
@@ -369,7 +338,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.51644737" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27631578" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27631578" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47532895" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -413,41 +382,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/questao/questao.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/dashboard/dashboard.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="332" column="46" lean-forward="false" selection-start-line="332" selection-start-column="46" selection-end-line="332" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.routing.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/dashboard/dashboard.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/login/login.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="43" lean-forward="false" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/login/log.guard.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-45">
@@ -545,22 +479,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/user-profile/usuario.model.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/shared/input/input.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="44" column="5" lean-forward="false" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/shared/input/input.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/user-profile/user-profile.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -645,28 +563,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/questao/questao.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="104" lean-forward="false" selection-start-line="10" selection-start-column="104" selection-end-line="10" selection-end-column="104" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/components/sidebar/sidebar.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
           <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/questao/questao.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="46" lean-forward="false" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -703,34 +603,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/services/areaconhecimento.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/models/area-conhecimento-encadeado.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/questao/questao-list-all/questao-list-all.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="56" lean-forward="false" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -748,7 +624,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -766,7 +642,17 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#63#0" expanded="true" />
+            <element signature="e#0#63#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/usuario-prof.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -779,30 +665,120 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/usuario-prof.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/prova/prova.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="55" lean-forward="false" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+        <state relative-caret-position="153">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/questao/questao.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="36" column="64" lean-forward="false" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/questao/questao.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="104" lean-forward="false" selection-start-line="10" selection-start-column="104" selection-end-line="10" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/input/input.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="44" column="5" lean-forward="false" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/input/input.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/input/input.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/select/select.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/select/select.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/select/select.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/models/area-conhecimento-encadeado.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="441">
+          <caret line="31" column="33" lean-forward="false" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.css">
+    <entry file="file://$PROJECT_DIR$/src/app/services/areaconhecimento.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        <state relative-caret-position="430">
+          <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/usuario-prof/prova/prova.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="186" lean-forward="false" selection-start-line="21" selection-start-column="186" selection-end-line="21" selection-end-column="186" />
           <folding />
         </state>
       </provider>
