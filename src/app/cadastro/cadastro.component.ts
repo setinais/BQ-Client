@@ -37,7 +37,6 @@ export class CadastroComponent implements OnInit {
   ngOnInit() {
       this.login.login('','',false).subscribe(token => localStorage.setItem('token', JSON.stringify(token)) , error => console.log(error) );
       $.material.init();
-      console.log(localStorage)
       this.userForm = this.fb.group({
           name: this.fb.control('', [Validators.required]),
           email: this.fb.control('', [Validators.required]),
@@ -72,7 +71,6 @@ export class CadastroComponent implements OnInit {
                 this.router.navigate(['/login'])
             },
             error => {
-                console.log(error)
                 this.setErrors(error, 'danger');
 
             }

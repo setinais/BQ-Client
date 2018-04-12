@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AreaConhecimentoEncadeado} from '../../models/area-conhecimento-encadeado.model';
-import {AreaConhecimentoService} from '../../services/areaconhecimento.service';
+import {QntdQuestao} from '../../models/qntd-questao.model';
 
 @Component({
     selector: 'app-prova',
@@ -10,30 +9,27 @@ import {AreaConhecimentoService} from '../../services/areaconhecimento.service';
 
 export class ProvaComponent implements OnInit {
 
-    material_icon: string = 'add';
-    idSelected: number
-    areas_conhecimentos: AreaConhecimentoEncadeado[];
+    selecionadas = false;
+    ids: QntdQuestao;
 
-    constructor(private areaService: AreaConhecimentoService){}
+
+    constructor(){
+        this.ids = new QntdQuestao;
+    }
 
     ngOnInit(){
-        this.areaService.getAreasEncadeada().subscribe(response =>{
-            this.areas_conhecimentos = response;
-            console.log(this.areas_conhecimentos);
-        });
-    }
-
-    dropDown(id: number){
-        if(id === this.idSelected)
-        {
-            this.idSelected = undefined;
-        }
-        else{
-            this.idSelected = id;
-        }
 
     }
-    selected(){
-        console.log('few')
+
+    toogle(){
+        if(this.selecionadas === false){
+            this.selecionadas = true;
+        } else {
+            this.selecionadas = false;
+        }
+    }
+
+    setId(id: QntdQuestao){
+        this.ids = id;
     }
 }

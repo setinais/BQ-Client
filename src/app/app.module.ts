@@ -24,7 +24,7 @@ import {LoginComponent} from './login/login.component';
     AppComponent,
     IndexComponent,
     CadastroComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,6 @@ export interface Questao{
     enunciado: string,
     alternativas: string[],
     nivel: number,
-    sub_categoria: AreaConhecimento[],
-    disciplina_id: AreaConhecimento,
+    sub_categoria: AreaConhecimento[] | number,
     professor_id: number
 }

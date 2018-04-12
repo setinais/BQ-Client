@@ -15,14 +15,14 @@ export class LoginService {
     client_password: ClientPassword = {
         grant_type: 'password',
         client_id : 3,
-        client_secret : 'HAV4Y3blSQA5qPhPW41REIkWhBO6qzZAF3H7rx7P',
+        client_secret : 'zbJsOMhBIBCEffk55c43Jy271zDQCw5Zm7x4IIX6',
         username: '',
         password: ''
     };
     client_credentials: ClientCredentials = {
         grant_type : 'client_credentials',
         client_id : 3,
-        client_secret : 'HAV4Y3blSQA5qPhPW41REIkWhBO6qzZAF3H7rx7P'
+        client_secret : 'zbJsOMhBIBCEffk55c43Jy271zDQCw5Zm7x4IIX6'
     };
 
     constructor(private http: HttpClient,
@@ -46,9 +46,12 @@ export class LoginService {
                     }
                 );
         }else{
-            this.isLoggin = true;
+
             return this.http.post<Token>(`${URL_API}/oauth/token`, this.client_credentials)
-                .do( token => localStorage.setItem('token', JSON.stringify(token)) );
+                .do( token => {
+                    localStorage.setItem('token', JSON.stringify(token))
+                    this.isLoggin = true;
+                });
         }
 
     }

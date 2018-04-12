@@ -1,0 +1,60 @@
+
+<div class="main-content">
+  <div class="row">
+    <div class="card card-stats">
+      <div class="card-header" data-background-color="orange">
+        <i class="material-icons">content_copy</i>
+      </div>
+      <div>
+        <p>
+          A alternativa correta estara com texto verde. Ex: <span class="text-success">Exemplo</span>
+        </p>
+      </div>
+      <div class="card-content">
+
+        <p class="category">Questões Selecionadas</p>
+        <h3 class="title">{{qntd_qs}}/{{ids.qntd}}<small></small></h3>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+          <div class="row">
+            <div class="col-md-12">
+              <div *ngFor="let questao of questoes; let i = index">
+                <div *ngIf="i === pagina">
+                  <p>Enunciado: {{questao.enunciado}}</p>
+                  <ul>
+                    <li *ngFor="let alternativa of questao.alternativas">{{ alternativa }}</li>
+
+                  </ul>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" (change)="addQS(questao)" [checked]="statusCheckBox(questao)">
+                      Adicionar Questão
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <div class="col-md-12" style="margin-top: 60px;">
+               <ul class="pagination pull-left">
+                 <li>
+                   <a style="cursor: pointer;" (click)="anterior()">
+                     <span aria-hidden="true" >&laquo;  Anterior</span>
+                   </a>
+                 </li>
+                </ul>
+                <div style="margin-top: 20px;margin-left: 5%;"> Pagina {{ pagina }}/{{ ids.qntd }} </div>
+                <ul class="pagination pull-right">
+                 <li>
+                   <a style="cursor: pointer;" (click)="proximo()">
+                     <span aria-hidden="true">Proxima   &raquo; </span>
+                   </a>
+                 </li>
+               </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+.li-icon-align{
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -2px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.li-icon-align>.icon-position {
+    float: left;
+}
+.icon-position{
+    display: inline-block;
+    min-width: 10px;
+    padding: 0px 0px;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-size: 20px;
+}
+
+.selected{
+    box-shadow: 1px 1px 2px 2px red;
+    padding: 5px;
+}
+
+.card-footer-edit{
+    margin: 0 20px 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eeeeee;
+}
+.stats-edit{
+    line-height: 22px;
+    color: #999999;
+    font-size: 12px;
+}
+
+.card-confirm-footer{
+    border-top: 1px solid #eeeeee;
+}
+
+.center-footer{
+    margin-left: 40%;
+}

@@ -6,6 +6,8 @@ import {URL_API} from '../urls';
 
 import {AreaConhecimento} from '../models/area-conhecimento.model';
 import {AreaConhecimentoEncadeado} from '../models/area-conhecimento-encadeado.model';
+import {QntdQuestao} from '../models/qntd-questao.model';
+import {Questao} from '../models/questao.model';
 
 @Injectable()
 export class AreaConhecimentoService {
@@ -36,5 +38,13 @@ export class AreaConhecimentoService {
 
     getAreasEncadeada(): Observable<AreaConhecimentoEncadeado[]> {
         return this.http.get<AreaConhecimentoEncadeado[]>(`${URL_API}/api/area-conhecimento/areas-encadeadas`);
+    }
+
+    getQntdQuestao(ids: QntdQuestao): Observable<QntdQuestao> {
+        return this.http.post<QntdQuestao>(`${URL_API}/api/area-conhecimento/getQntdQuestao`, ids);
+    }
+
+    getQuestoesProva(ids: QntdQuestao): Observable<Questao[]> {
+        return this.http.post<Questao[]>(`${URL_API}/api/area-conhecimento/getQuestoesProva`, ids);
     }
 }

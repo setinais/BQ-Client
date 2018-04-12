@@ -36,5 +36,4 @@ export class QuestaoService {
         const id = typeof questao === 'number' ? questao : questao.id;
         return this.http.delete<Questao>(`${URL_API}/questao/${id}`)
     }
-
 }
