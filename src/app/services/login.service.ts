@@ -15,14 +15,14 @@ export class LoginService {
     client_password: ClientPassword = {
         grant_type: 'password',
         client_id : 3,
-        client_secret : 'zbJsOMhBIBCEffk55c43Jy271zDQCw5Zm7x4IIX6',
+        client_secret : 'tH3Ioju6C0x6rLJzCyQGB7LxsOcksmoMtuAYSlA1',
         username: '',
         password: ''
     };
     client_credentials: ClientCredentials = {
         grant_type : 'client_credentials',
         client_id : 3,
-        client_secret : 'zbJsOMhBIBCEffk55c43Jy271zDQCw5Zm7x4IIX6'
+        client_secret : 'tH3Ioju6C0x6rLJzCyQGB7LxsOcksmoMtuAYSlA1'
     };
 
     constructor(private http: HttpClient,

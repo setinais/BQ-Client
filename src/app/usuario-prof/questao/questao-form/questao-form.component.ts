@@ -37,7 +37,7 @@ export class QuestaoFormComponent implements OnInit {
             alternativa4: this.fb.control('',[Validators.required]),
             alternativa5: this.fb.control('',[Validators.required]),
             disciplina_id: this.fb.control('',[Validators.required]),
-            sub_id: this.fb.control('',[Validators.required])
+            sub_categoria: this.fb.control('',[Validators.required])
         });
 
     }
@@ -49,9 +49,7 @@ export class QuestaoFormComponent implements OnInit {
     }
     addQuestao(questao: Questao) {
         questao.alternativas = [questao['alternativa1'], questao['alternativa2'], questao['alternativa3'], questao['alternativa4'], questao['alternativa5'] ];
-        questao.nivel = 2;
-        questao.professor_id = 3;
-        questao.sub_categoria = [questao['sub_id']]
+        questao.nivel = 1;
         console.log(questao);
         this.questaoService.addQuestao(questao)
             .subscribe((response) => {

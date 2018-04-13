@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {ErrorHandler, NgModule} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app.routing';
@@ -18,6 +18,7 @@ import { UsuarioProfModule } from './usuario-prof/usuario-prof.module';
 import { IndexComponent } from './index/index.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import {LoginComponent} from './login/login.component';
+import {NgProgressInterceptor, NgProgressModule} from 'ngx-progressbar';
 
 @NgModule({
   declarations: [
@@ -36,9 +37,10 @@ import {LoginComponent} from './login/login.component';
     ServicesModule,
     UsuarioProfModule,
     AppRoutingModule,
+    NgProgressModule
   ],
   providers: [httpInterceptorsProviders, {provide: LocationStrategy, useClass: HashLocationStrategy},
-      {provide: ErrorHandler, useClass: AplicationErrorHandler}],
+      {provide: ErrorHandler, useClass: AplicationErrorHandler}, { provide: HTTP_INTERCEPTORS, useClass: NgProgressInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

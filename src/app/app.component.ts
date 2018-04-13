@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgProgress} from 'ngx-progressbar';
 
 
 declare const $: any;
@@ -10,7 +11,8 @@ declare const $: any;
 })
 export class AppComponent implements OnInit {
 
-    constructor( ) {}
+    constructor(public ngProgress: NgProgress) {}
 
-    ngOnInit() { }
+    ngOnInit() {
+    }
 }

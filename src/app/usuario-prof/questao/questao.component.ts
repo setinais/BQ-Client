@@ -50,31 +50,6 @@ export class QuestaoComponent implements OnInit {
         console.log(`edit #{status.name}`)
     }
 
-    backPage(pag: number): void{
-        if (this.back > 1) {
-            this.back--;
-            this.next--;
-        }
-        this.questaoService.getQuestao(pag).subscribe(
-            response => {
-                this.questoes = response['data'];
-                this.meta = response['meta'];
-            }
-        );
-    }
-
-    nextPag(pag: number): void{
-        if (this.next < this.meta.last_page)
-            this.back++
-        this.next++
-        this.questaoService.getQuestao(pag).subscribe(
-            response => {
-                this.questoes = response['data'];
-                this.meta = response['meta'];
-            }
-        )
-    }
-
     init() {
 
     }
