@@ -10,6 +10,8 @@ import {LoggedInGuard} from '../login/log.guard';
 import {UserProfileModule} from './user-profile/user-profile.module';
 import {ProvaComponent} from './prova/prova.component';
 import {ProvaModule} from './prova/prova.module';
+import {AvaliacaoComponent} from './avaliacao/avaliacao.component';
+import {AvaliacaoModule} from './avaliacao/avaliacao.module';
 
 const ROUTES: Routes = [
     { path: 'usuario', component: UsuarioProfComponent, children: [
@@ -17,6 +19,7 @@ const ROUTES: Routes = [
             { path: 'dash',      component: DashboardComponent },
             { path: 'questao', component: QuestaoComponent},
             { path: 'prova', component: ProvaComponent },
+            { path: 'avaliacao', component: AvaliacaoComponent},
             { path: 'user-profile',   component: UserProfileComponent },
 
         ], canActivate: [LoggedInGuard]},
@@ -26,7 +29,7 @@ const ROUTES: Routes = [
     declarations: [
         DashboardComponent,
         UsuarioProfComponent],
-    imports: [ComponentsModule, QuestaoModule, RouterModule.forChild(ROUTES), UserProfileModule, ProvaModule],
+    imports: [ComponentsModule, QuestaoModule, RouterModule.forChild(ROUTES), UserProfileModule, ProvaModule, AvaliacaoModule],
     exports: [],
     providers: [LoggedInGuard]
 })

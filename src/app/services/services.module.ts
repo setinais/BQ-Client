@@ -5,6 +5,7 @@ import {AreaConhecimentoService} from './areaconhecimento.service';
 import { UsuarioService} from './usuario.service';
 import {AuthService} from './auth.service';
 import {LoginService} from './login.service';
+import {ProfessorService} from './professor.service';
 
 @NgModule({
     declarations: [],
@@ -16,7 +17,8 @@ import {LoginService} from './login.service';
         AreaConhecimentoService,
         UsuarioService,
         AuthService,
-        LoginService
+        LoginService,
+        ProfessorService
     ]
 })
 

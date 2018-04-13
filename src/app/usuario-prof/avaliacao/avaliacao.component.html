@@ -1,0 +1,24 @@
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-4" *ngFor="let p of prof">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="green">
+                        <i class="material-icons">content_copy</i>
+                    </div>
+                    <div class="card-content">
+                        <p class="category">{{p.nome_prof}}</p>
+                        <h3 class="title">CPF: <small>{{p.cpf}}</small></h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats col-md-12">
+                            <i class="material-icons text-danger">warning</i> Matricula: {{p.matricula_prof}}
+                        </div>
+                        <button class="btn btn-success">Autorizar</button>
+                        <button class="btn btn-danger">Bloquear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

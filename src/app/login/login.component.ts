@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
                 private activatedRoute: ActivatedRoute) { }
 
     ngOnInit() {
-        this.loginService.login('3@3.com','123456',true).subscribe(r => {this.router.navigate([atob(btoa('/usuario/questao'))]);});
+        //this.loginService.login('3@3.com','123456',true).subscribe(r => {this.router.navigate([atob(btoa('/usuario/questao'))]);});
         $.material.init();
         this.loginForm = this.fb.group({
             username: this.fb.control('', [Validators.required, Validators.email]),
