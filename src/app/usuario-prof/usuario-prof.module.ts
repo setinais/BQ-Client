@@ -31,6 +31,6 @@ const ROUTES: Routes = [
     providers: [LoggedInGuard]
 })
 
-export class UsuarioProfModule{
+export class UsuarioProfModule {
 
 }

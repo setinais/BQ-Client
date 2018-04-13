@@ -5,6 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import {URL_API} from '../urls';
 
 import {Questao} from '../models/questao.model';
+import {Estatistica} from '../models/estatistica.model';
 
 @Injectable()
 export class QuestaoService {
@@ -35,5 +36,9 @@ export class QuestaoService {
     deleteQuestao(questao: Questao | number): Observable<Questao> {
         const id = typeof questao === 'number' ? questao : questao.id;
         return this.http.delete<Questao>(`${URL_API}/questao/${id}`)
+    }
+
+    getEstatisticas(): Observable<Estatistica> {
+        return this.http.get<Estatistica>(`${URL_API}/api/estatistica`)
     }
 }

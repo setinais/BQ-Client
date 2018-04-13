@@ -25,7 +25,6 @@ export class QuestaoFormComponent implements OnInit {
     ngOnInit() {
         this.areaconhecimentoService.getAreaConhecimento().subscribe(response => {
             this.disciplinas = response;
-            console.log(response)
         });
 
 
@@ -62,6 +61,6 @@ export class QuestaoFormComponent implements OnInit {
                     this.notificationsService.showNotification(`Questao cadastrado com sucesso!`, 'success')
 
                 }
-            })
+            }, error => console.log(error) );
     }
 }

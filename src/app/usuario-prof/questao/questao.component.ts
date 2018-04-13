@@ -20,20 +20,19 @@ export class QuestaoComponent implements OnInit {
                 private notificacaoService: NotificacaoService ) { }
 
     ngOnInit() {
-        // this.questaoService.getQuestao(2).subscribe(
-        //     response => {
-        //         this.questoes = response['data'];
-        //         console.log(response)
-        //     }
-        // );
-
 
     }
+    getQuestaoProf(){
+        this.questaoService.getQuestao(2).subscribe(
+            response => {
+                this.questoes = response['data'];
+            }
+        );
+    }
     getAllQuestao() {
-        // this.questaoService.getQuestaoAll().subscribe(response => {
-        //     this.questoesAlls = response['data'];
-        //     console.log(response);
-        // })
+        this.questaoService.getQuestaoAll().subscribe(response => {
+            this.questoesAlls = response['data'];
+        })
     }
     delete(questao: Questao) {
         this.questoes = this.questoes.filter(s => s !== questao);

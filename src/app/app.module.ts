@@ -37,7 +37,7 @@ import {NgProgressInterceptor, NgProgressModule} from 'ngx-progressbar';
     ServicesModule,
     UsuarioProfModule,
     AppRoutingModule,
-    NgProgressModule
+    NgProgressModule,
   ],
   providers: [httpInterceptorsProviders, {provide: LocationStrategy, useClass: HashLocationStrategy},
       {provide: ErrorHandler, useClass: AplicationErrorHandler}, { provide: HTTP_INTERCEPTORS, useClass: NgProgressInterceptor, multi: true}],

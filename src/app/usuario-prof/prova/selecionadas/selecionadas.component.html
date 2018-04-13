@@ -23,7 +23,11 @@
                 <div *ngIf="i === pagina">
                   <p>Enunciado: {{questao.enunciado}}</p>
                   <ul>
-                    <li *ngFor="let alternativa of questao.alternativas">{{ alternativa }}</li>
+                    <li *ngFor="let alternativa of questao.alternativas; let i = index">
+                      <span [ngClass]="{'text-success' : i === questao.alternativa_correta, 'text-danger' : i !== questao.alternativa_correta}">
+                        {{ alternativa }}
+                      </span>
+                    </li>
 
                   </ul>
                   <div class="checkbox">
