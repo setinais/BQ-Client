@@ -25,6 +25,7 @@ export class QuestaoFormComponent implements OnInit {
     ngOnInit() {
         this.areaconhecimentoService.getAreaConhecimento().subscribe(response => {
             this.disciplinas = response;
+            console.log(response)
         });
 
 

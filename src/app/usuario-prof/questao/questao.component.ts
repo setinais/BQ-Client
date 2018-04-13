@@ -15,29 +15,25 @@ export class QuestaoComponent implements OnInit {
 
     questoesAlls: Questao[];
     questoes: Questao[];
-    meta: Meta;
-    back: number = 1;
-    next: number = 2;
 
     constructor(private questaoService: QuestaoService,
-                private notificacaoService: NotificacaoService,
-                private usuarioService: UsuarioService) { }
+                private notificacaoService: NotificacaoService ) { }
 
     ngOnInit() {
-        this.questaoService.getQuestao(2).subscribe(
-            response => {
-                this.questoes = response['data'];
-
-            }
-        );
+        // this.questaoService.getQuestao(2).subscribe(
+        //     response => {
+        //         this.questoes = response['data'];
+        //         console.log(response)
+        //     }
+        // );
 
 
     }
     getAllQuestao() {
-        this.questaoService.getQuestaoAll().subscribe(response => {
-            this.questoesAlls = response['data'];
-            console.log(response);
-        })
+        // this.questaoService.getQuestaoAll().subscribe(response => {
+        //     this.questoesAlls = response['data'];
+        //     console.log(response);
+        // })
     }
     delete(questao: Questao) {
         this.questoes = this.questoes.filter(s => s !== questao);
@@ -49,16 +45,4 @@ export class QuestaoComponent implements OnInit {
     edit(questao: Questao) {
         console.log(`edit #{status.name}`)
     }
-
-    init() {
-
-    }
-
-}
-
-class Meta {
-    current_page: number
-    from: number
-    last_page: number
-    total: number
 }

@@ -76,7 +76,7 @@
                 </div>
                 <div class="col-md-5">
                     <app-select-container errorMessage="Campo obrigatório" label="Sub Categoria">
-                        <select class="form-control" formControlName="sub_id">
+                        <select class="form-control" formControlName="sub_categoria">
                             <option *ngFor="let sub of subs" [value]="sub.id">{{sub?.area_de_conhecimento}}</option>
                         </select>
                     </app-select-container>
